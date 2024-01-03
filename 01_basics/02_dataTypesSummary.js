@@ -43,3 +43,23 @@ console.log(typeof anotherId);
 console.log(typeof family);
 console.log(typeof myObj);
 console.log(typeof myFunction);
+
+//+++++++++++memory+++++++++++++++
+// stack memory(primitive) , heap memory(non-primitive)
+
+let myName = "Himabindu"
+let anotherName = myName
+anotherName = "eslavath"
+
+console.log(myName);
+console.log(anotherName);
+
+let userOne = {
+    name1: "Hima bindu",
+    age: 18 
+}
+
+let userTwo = userOne
+userTwo.name1 = "eslavath"
+console.log(userOne.name1);
+console.log(userTwo.name1);
