@@ -71,10 +71,10 @@ const {courseinstructor: instructor} = course
 //     "price": "free"
 // }
 
-[
-    {},
-    {},
-    {},
-    {},
-]
+// [
+//     {},
+//     {},
+//     {},
+//     {},
+// ]
 
