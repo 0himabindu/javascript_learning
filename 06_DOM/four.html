@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_part-4</title>
+</head>
+<body  style=" background-color: #212121; color: white;">
+    
+<ul class="language">
+    <li>JavaScript</li>
+</ul>
+    
+</body>
+<script>
+
+
+
+//function add another languages
+//this is not optimized this will be used for small amount
+function addLanguage(langName){
+const li = document.createElement('li');
+li.innerHTML = `${langName}`
+document.querySelector('.language').appendChild(li)
+}
+addLanguage("python");
+addLanguage("Typescript");
+addLanguage("CPP");
+  
+
+//optimized way for add in large data
+//this will get good if u want to add in large number of data
+  function adding(langName1){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName1))
+    document.querySelector('.language').appendChild(li);
+  }
+  adding("golang");
+  adding("React.js");
+
+
+//EDIT
+const editoptn = document.querySelector("li:nth-child(2)");   //selected the value which we want
+//editoptn.innerHTML="bindu";          avoid this type of overwriting
+const newelement = document.createElement('li');     //created a new element
+newelement.textContent = "HTML";                     //added value into new element
+editoptn.replaceWith(newelement);                //now we replaced it with the new element
+
+//another edit example
+const react = document.querySelector('li:nth-child(6)');
+const newli = document.createElement('li');
+newli.textContent="node.js";
+react.replaceWith(newli);
+
+//another way for edit
+const firstLang = document.querySelector('li:first-child');
+firstLang.outerHTML = '<li> C Language </li>'
+
+
+//REMOVE
+const removeoptn = document.querySelector('li:last-child');
+removeoptn.remove();
+
+
+</script>
+</html>
