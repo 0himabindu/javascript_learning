@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing-Color</title>
+</head>
+<style>
+    body{
+        background-color: rgb(65, 61, 61);
+        color: white;
+    }
+</style>
+<body>
+    <h1>Start button should change the background color ever second</h1>
+   <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p>This can be done by Asycn properties</p>
+</body>
+<script>
+
+      //generate random color
+      const randomcolor = function(){
+        const hex = "0123456789ABCDEF";
+        let color = '#';
+    for(let i=0;i<6;i++){
+    color+=hex[Math.floor(Math.random()*16)];
+    }
+    return color;
+};
+let intervalId;
+
+    const startchaningingcolor = function(){
+        if(!intervalId){
+             intervalId = setInterval(changebgcolor,1000);
+}
+        function changebgcolor(){
+            document.body.style.backgroundColor=randomcolor();
+        }
+    }
+
+    const stopchaningingcolor = function(){
+     clearInterval(intervalId);
+     intervalId=null;
+    }
+
+
+document.querySelector('#start').addEventListener('click',startchaningingcolor);
+document.querySelector('#stop').addEventListener('click',stopchaningingcolor);
+
+</script>
+</html>

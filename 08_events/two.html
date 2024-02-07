@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async-projects</title>
+</head>
+<body>
+    <h1>asycn projects</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+//settimeout
+setTimeout(function(){
+    console.log("hima");
+},2000);
+
+//setinterval
+const sayhima = function(){
+    console.log("himabindu");
+}
+setInterval(sayhima,2000);
+
+const changingheading = function(){
+    document.querySelector('h1').innerHTML="We are learing Async properties";
+}
+setInterval(changingheading,2000);
+
+//cleartimeout
+//we need to take the reference of the settimeout and then it will execute
+const changeMe = setTimeout(changingheading,2000);
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe);
+    console.log("STOPPED");
+})
+
+
+</script>
+</html>
